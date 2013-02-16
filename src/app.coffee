@@ -1,9 +1,10 @@
 class PigeonLogger
 	constructor: ->
-		document.addEventListener('deviceready', this.deviceready, false);
+		# document.addEventListener('deviceready', this.deviceready, false);
+		document.querySelector('.take-photo').onclick = @capturePhoto
 
-	deviceready: (e) ->
-		alert "deviceready"
+	# deviceready: (e) ->
+		# alert "deviceready"
 
 	capturePhoto: ->
 		# capture callback
