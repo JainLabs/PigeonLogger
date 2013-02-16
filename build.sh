@@ -1,0 +1,1 @@
+coffee -o ./lib -wc ./src/app.coffee

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.jainlabs.pigeonlogger"
+        version   = "2.2.0">
+    <name>Pigeon Logger</name>
+
+    <description>
+        Logs photos and GPS coordinates for AR Drone research project
+    </description>
+
+    <author href="http://jainlabs.com" email="us@jainlabs.com">
+        JainLabs
+    </author>
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+    <preference name="phonegap-version" value="2.2.0" />
+    <preference name="orientation"      value="default" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="false" />
+</widget>
