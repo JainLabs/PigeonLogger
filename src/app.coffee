@@ -7,22 +7,15 @@ class PigeonLogger
 		# alert "deviceready"
 
 	capturePhoto: ->
-		# capture callback
-		captureSuccess = (mediaFiles) ->
-			navigator.notification.alert "Total files: #{mediaFiles.length}"
-			for i in [0...mediaFiles.length]
-				img = document.createElement 'img'
-				img.src = mediaFiles[i].fullPath
-				document.body.appendChild img
+		onSuccess = (imageData) ->
+			image = document.getElementById("image")
+			image.src = "data:image/jpeg;base64," + imageData
+		onFail = (message) ->
+			alert "Failed because: " + message
+		navigator.camera.getPicture onSuccess, onFail,
+			quality: 50
+			destinationType: Camera.DestinationType.DATA_URL
 
-		# capture error callback
-		captureError = (error) ->
-			navigator.notification.alert "Error code: " + error.code, null, "Capture Error"
-
-
-		# start image capture
-		navigator.device.capture.captureImage captureSuccess, captureError,
-			limit: 2
 
 
 window.app = new PigeonLogger()
